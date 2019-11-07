@@ -14,6 +14,8 @@
     function checkAge(date) {
         const today = new Date();
         let message = "Menor de idade";
+        if (typeof date.getDate === "function") {
+            message = "Insira uma data, seu corno!";
             if (date.getFullYear() < (today.getFullYear() - 18)) {
                 message = "Maior de idade";
             } else if (date.getFullYear() === (today.getFullYear() - 18)) {
@@ -25,6 +27,7 @@
                     }
                 }
             }
+        }
         return message;
     }
 </script>
